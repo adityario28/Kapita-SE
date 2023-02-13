@@ -3,12 +3,13 @@ import volume as vol
 #1. fungsi untuk mencari bilangan prima
 def prima(awal, akhir):
     hasil = []
-    for angka in range(awal, akhir + 1):
+    akhir += 1
+    for angka in range(awal, akhir):
         if all(angka % i != 0 for i in range(2,angka)):
             hasil.append(angka)
     return hasil
 
-print("1. Bilangan prima dari range 1-35 adalah : ", prima(1,35))
+print("1. Bilangan prima dari range 1-35 adalah : ", prima(1,31))
 
 # The function prime_numbers takes two parameters, start and end, which represent the beginning and end of the range of numbers to search for prime numbers.
 
@@ -29,7 +30,8 @@ print("1. Bilangan prima dari range 1-35 adalah : ", prima(1,35))
 #2. fungsi untuk mencari bilangan ganjil
 def ganjil(awal, akhir):
     hasil = []
-    for angka in range(awal, akhir + 1):
+    akhir += 1
+    for angka in range(awal, akhir):
         if angka % 2 != 0:
             hasil.append(angka)
     return hasil
@@ -59,7 +61,7 @@ def primaganjil(awal, akhir):
     bil_ganjil = ganjil (awal, akhir)
     return [angka for angka in bil_prima if angka in bil_ganjil]
 
-print("3. Bilangan prima ganjil dari range 1-35 adalah : ", primaganjil(1,35))
+print("3. Bilangan prima ganjil dari range 1-35 adalah : ", primaganjil(1,10))
 
 
 
@@ -73,10 +75,12 @@ print("4. Kata rexus apabila ditulis secara berkebalikan adalah : ", kebalikan("
 
 
 #5. fungsi untuk mengecek palindrom sebuah kata
+masukan = "kakak"
+
 def palindrom(input):
     return input == input[::-1]
 
-print("5. Kata fantech adalah palindrom ialah(T/F) : ", palindrom("fantech"))
+print("5. Kata", masukan, "adalah palindrom (T/F) :", palindrom(masukan))
 
 
 #6. fungsi untuk mencari selisih dari angka tertinggi dan terendah pada suatu list
@@ -118,6 +122,26 @@ def spec(list, target):
 print("8. Bilangan yang dicari :", spec(bilangan, 2))
 
 #9. fungsi aritmatika
+def aritmatik(op, angka1=1, angka2=1):
+    try:
+        if not isinstance(angka1, int) or not isinstance(angka2, int):
+            raise TypeError("Bilangan harus angka")
+        if op == "+":
+            return angka1 + angka2
+        elif op == "-":
+            return angka1 - angka2
+        elif op == "*":
+            return angka1 * angka2
+        elif op == "/":
+            return int(angka1 / angka2)
+        else:
+            return "Operator salah coy"
+    except ZeroDivisionError:
+        return "tidak bisa membagi 0"
+    except TypeError as err:
+        return err
+
+print("9. Bilangan yang dicari :", aritmatik("/", 2, 1))
 
 
 #10. modul volume
