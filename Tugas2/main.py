@@ -126,6 +126,7 @@ def aritmatik(op, angka1=1, angka2=1):
     try:
         if not isinstance(angka1, int) or not isinstance(angka2, int):
             raise TypeError("Bilangan harus angka")
+    
         if op == "+":
             return angka1 + angka2
         elif op == "-":
@@ -133,16 +134,20 @@ def aritmatik(op, angka1=1, angka2=1):
         elif op == "*":
             return angka1 * angka2
         elif op == "/":
-            return int(angka1 / angka2)
+            return round((angka1 / angka2), 2)
         else:
             return "Operator salah coy"
+        
     except ZeroDivisionError:
         return "tidak bisa membagi 0"
-    except TypeError as err:
-        return err
+    except TypeError as error:
+        return error
 
-print("9. Bilangan yang dicari :", aritmatik("/", 2, 1))
+print("9. Bilangan yang dicari :", aritmatik("/", 3, 9))
 
 
 #10. modul volume
-print(vol.kubus(4))
+print("10. Volume Kubus dengan sisi 4 :", vol.kubus(4))
+print("    Volume Balok :", vol.balok(5,7,6))
+print("    Volume Limas segi 4 :", vol.limas4(4, 4, 3))
+print("    Volume Prisma :", vol.prisma(5,10,8))
