@@ -11,21 +11,6 @@ def prima(awal, akhir):
 
 print("1. Bilangan prima dari range 1-35 adalah : ", prima(1,31))
 
-# The function prime_numbers takes two parameters, start and end, which represent the beginning and end of the range of numbers to search for prime numbers.
-
-# The variable primes is an empty list that will be used to store the prime numbers found within the given range.
-
-# The for loop iterates over the numbers in the range from start to end.
-
-# Within the loop, the if statement checks if the current number num is prime. To do this, it uses the all function, which returns True if all elements in the given iterable are True.
-
-# The iterable passed to all is a generator expression that evaluates to True if num is not divisible by any number i in the range from 2 to num - 1. If num is not divisible by any of these numbers, it is a prime number.
-
-# If the current number num is prime, it is appended to the list primes.
-
-# After the for loop has completed, the function returns the list of prime numbers, primes.
-
-
 
 #2. fungsi untuk mencari bilangan ganjil
 def ganjil(awal, akhir):
@@ -38,21 +23,6 @@ def ganjil(awal, akhir):
 
 print("2. Bilangan ganjil dari range 1-48 adlaah : ", ganjil(1,48))
 
-# The function odd_numbers takes two parameters, start and end, which represent the beginning and end of the range of numbers to search for odd numbers.
-
-# The variable odds is an empty list that will be used to store the odd numbers found within the given range.
-
-# The for loop iterates over the numbers in the range from start to end.
-
-# Within the loop, the if statement checks if the current number num is odd. To do this, it calculates the remainder of num divided by 2 using the modulo operator (%).
-
-# If the remainder is not 0, it means that num is odd.
-
-# If the current number num is odd, it is appended to the list odds.
-
-# After the for loop has completed, the function returns the list of odd numbers, odds.
-
-
 
 #3. fungsi untuk mencari bilangan prima ganjil
 
@@ -62,9 +32,6 @@ def primaganjil(awal, akhir):
     return [angka for angka in bil_prima if angka in bil_ganjil]
 
 print("3. Bilangan prima ganjil dari range 1-35 adalah : ", primaganjil(1,10))
-
-
-
 
 
 #4. fungsi membalikkan karakter input string
